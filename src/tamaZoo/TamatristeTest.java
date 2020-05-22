@@ -14,10 +14,10 @@ public class TamatristeTest {
 	@Test
 	public void tamatristeIsEverUnhappyDespiteCaresses() throws Exception {
 		final Tamagotchi tama = new TamaTriste("triste", 50);
-		tama.aggiungiCarezze(100);;
-		tama.aggiungiCarezze(100);;
-		tama.aggiungiCarezze(100);;
-		tama.aggiungiCarezze(100);;
+		tama.aggiungiCarezze(100);
+		tama.aggiungiCarezze(100);
+		tama.aggiungiCarezze(100);
+		tama.aggiungiCarezze(100);
 		tama.aggiungiCarezze(100);
 		assertFalse(!tama.isInfelice());
 	}
