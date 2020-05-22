@@ -6,9 +6,9 @@ import mylib.*;
 public class TamaMain {
 
 	private final static String MESS_BENVENUTO = "BENVENUTO IN TAMAZOO";
-	private final static String INSERT_TAMAGOTCHI = "Inserisci il numero dei Tamagotchi ";
-	private final static String INSER_NOME_TAMA = "Inserisci il nome del Tamagotchi ";
-	private final static String CHOOSE_OPTIONS = "Scegli cosa fare";
+	private final static String INSERT_TAMAGOTCHI = "Inserisci il numero dei Tamagotchi: ";
+	private final static String INSER_NOME_TAMA = "Inserisci il nome del Tamagotchi: ";
+	private final static String CHOOSE_OPTIONS = "Scegli cosa fare: ";
 	
 	private final static String[] MAIN_MENU_ITEMS = { "Dai biscotti", "Dai carezze" };
 	
@@ -87,6 +87,10 @@ public class TamaMain {
 	
 	}
 
+	/**
+	 * creazione delle specie dei tamagotchies 
+	 * @return l'oggetto tamagotchi
+	 */
 	private static Tamagotchi creaTamagotchi() {
 		
 		String nome = InputDati.leggiStringaNonVuota(INSER_NOME_TAMA);

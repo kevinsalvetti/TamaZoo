@@ -22,8 +22,8 @@ public class Tamagotchi {
 	static final double FATTORE_BISCOTTI = 4;
 	
 	
-	private final static String DESCRIZIONE = "Sono %s e il mio tipo %s%nIl mio grado di saziet‡† Ë: %1.2f%nIl mio grado di soddisfazione Ë: %1.2f";
-	private final static String MESS_DEAD = "\nAttenzione sono morto :_ -(";
+	private final static String DESCRIZIONE = "Sono %s e il mio tipo √® %s%n Il mio grado di saziet√† √®: %1.2f%nIl mio grado di soddisfazione √®: %1.2f";
+	private final static String MESS_DEAD = "\nAttenzione sono morto :-(";
 	private final static String MESS_SAD = "\nAttenzione sono infelice!";
 
 	private String nome;
@@ -33,6 +33,12 @@ public class Tamagotchi {
 	
 	Scanner sc = new Scanner(System.in);
 
+	/**
+	 * costruttore del tamagotchi
+	 * @param _nome
+	 * @param _soddisfazione
+	 * @param _sazieta
+	 */
 	public Tamagotchi(String _nome, int _soddisfazione, int _sazieta) {
 
 		this.nome = _nome;
@@ -71,13 +77,20 @@ public class Tamagotchi {
 		
 	}
 
+	/**
+	 * metodo per aggiunta carezze
+	 * @param numCarezze
+	 */
 	public void aggiungiCarezze(int numCarezze) {
 		soddisfazione = Math.min(soddisfazione + numCarezze, MAX_SODDISFAZIONE);
 		sazieta = Math.max(0, sazieta - numCarezze / FATTORE_CAREZZE);
 		
 	}
 
-	
+	/**
+	 * metodo per dare biscotti
+	 * @param numBiscotti
+	 */
 	public void daiBiscotti(int numBiscotti) {
 		
 		for (int i = 1 ; i<= numBiscotti; i++) {
@@ -87,6 +100,10 @@ public class Tamagotchi {
 		
 	}
 	
+	/**
+	 * metodo per verifica morte tamagotchi
+	 * @return
+	 */
 	public boolean isDie() {
 		return  soddisfazione == 0 || sazieta == 0 || sazieta == MAX_SAZIETA;
 	}

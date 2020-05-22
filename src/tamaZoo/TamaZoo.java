@@ -14,11 +14,19 @@ public class TamaZoo {
 		specie = new ArrayList <Tamagotchi> ();
 	}
 	
+	/**
+	 * meotodo per inserire i tamagotchies
+	 * @param Inserire
+	 */
 	public void inserisci (Tamagotchi Inserire)
 	{
 		specie.add(Inserire);
 	}
 	
+	/**
+	 * metodo per controllare se il tamagotchi è vivo
+	 * @return
+	 */
 	public boolean controlloVivi() {
 		
 		for(Tamagotchi elemento : specie)
@@ -29,6 +37,10 @@ public class TamaZoo {
 		return false;
 	}
 	
+	/**
+	 * metodo per dare la stessa quantità di biscotti a tutti i tamgotchies
+	 * @param quantiBiscotti
+	 */
 	public void daiBiscotti (int quantiBiscotti)
 	  {
 		  for (Tamagotchi elemento : specie)
@@ -43,6 +55,10 @@ public class TamaZoo {
 		  }
 	  }
 	  
+	/**
+	 * metodo per dare la stessa quantità di carezze a tutti i tamagotchies
+	 * @param quanteCarezze
+	 */
 	  public void daiCarezze (int quanteCarezze)
 	  {
 		  for (Tamagotchi elemento : specie)
