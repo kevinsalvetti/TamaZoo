@@ -40,6 +40,7 @@ public class TamaMain {
 		Tamagotchi nuovoTama = creaTamagotchi();
 		
 		Zoo.inserisci(nuovoTama);
+	
 	}
 		
 	MyMenu principale = new MyMenu(MAIN_QUESTION, MAIN_MENU_ITEMS);
