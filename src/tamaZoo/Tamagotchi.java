@@ -1,4 +1,4 @@
-package tamazoo;
+package tamaZoo;
 
 import java.util.Scanner;
 
@@ -61,8 +61,8 @@ public class Tamagotchi {
 		return sazieta;
 	}
 
-	public void setSazieta(double d) {
-		this.sazieta = d;
+	public void setSazieta(double sazieta) {
+		this.sazieta = sazieta;
 	}
 
 	public boolean isInfelice() {

@@ -1,4 +1,4 @@
-package tamazoo;
+package tamaZoo;
 
 public class TamaZoo {
 
