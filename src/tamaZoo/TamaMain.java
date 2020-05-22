@@ -12,7 +12,19 @@ public class TamaMain {
 	private final static String MESS_BENVENUTO = "BENVENUTO IN TAMAZOO";
 	private final static String INSERT_TAMAGOTCHI = "Inserisci il numero dei Tamagotchi";
 	private final static String INSER_NOME_TAMA = "Inserisci il nome del Tamagotchi";
+	private final static String CHOOSE_OPTIONS = "Scegli cosa fare";
 	
+	private final static String[] MAIN_MENU_ITEMS = { "Dai biscotti", "Dai carezze" };
+	
+	private final static String MESS_BISCOTTI = "Vengono dati %d biscotti a ciascun Tamagotchi%n%n";
+	private final static String MESS_CAREZZE = "Vengono dati %d carezze a ciascun Tamagotchi%n%n";
+	
+	private final static String MESS_ESTINTI = "!!! ATTENZIONE !!! I TAMAGOTCHI SONO TUTTI MORTI !!! ";
+	
+	private final static String MESS_ARRIVEDERCI = " GRAZIE PER AVER GIOCATO A TAMAZOO";
+	
+	private final static String MESS_ERROR = "OPERAZIONE NON SUPPORTATA";
+	 
 	private final static int NUMERO_SPECIE = 3 ;
 	private final static int TAMA_BASE = 1;
 	private final static int TAMA_TRISTE = 2;
@@ -43,7 +55,7 @@ public class TamaMain {
 	
 	}
 		
-	MyMenu principale = new MyMenu(MAIN_QUESTION, MAIN_MENU_ITEMS);
+	MyMenu principale = new MyMenu(CHOOSE_OPTIONS, MAIN_MENU_ITEMS);
 
 	boolean fine = false;
 
@@ -53,26 +65,26 @@ public class TamaMain {
 		switch (voceSelezionata) {
 		case 1:
 			int numBiscotti = NumeriCasuali.estraiIntero(MIN_BISCOTTI, MAX_BISCOTTI);
-			System.out.printf(MSG_BISCOTTI, numBiscotti);
+			System.out.printf(MESS_BISCOTTI, numBiscotti);
 			Zoo.daiBiscotti(numBiscotti);
 			break;
 		case 2:
 			int numCarezze = NumeriCasuali.estraiIntero(MIN_CAREZZE, MAX_CAREZZE);
-			System.out.printf(MSG_CAREZZE, numCarezze);
+			System.out.printf(MESS_CAREZZE, numCarezze);
 			Zoo.daiCarezze(numCarezze);
 			break;
 		case 0:
 			fine = true;
-			System.out.println(MSG_SALUTI);
+			System.out.println(MESS_ARRIVEDERCI);
 			break;
 		default:
-			System.out.println(MSG_NO_OP);
+			System.out.println(MESS_ERROR);
 			break;
 		}// switch
 
-		if (!mioZoo.ciSonoVivi()) {
+		if (!Zoo.controlloVivi()) {
 			fine = true;
-			System.out.println(MSG_ESTINTI);
+			System.out.println(MESS_ESTINTI);
 		}
 
 	} while (!fine);
