@@ -23,7 +23,7 @@ public class Tamagotchi {
 	
 	
 	private final static String DESCRIZIONE = "Sono %s e il mio tipo %s%nIl mio grado di sazietà  è: %1.2f%nIl mio grado di soddisfazione è: %1.2f";
-	private final static String MESS_DEAD = "\nAttenzione sono morto :_-(";
+	private final static String MESS_DEAD = "\nAttenzione sono morto :_ -(";
 	private final static String MESS_SAD = "\nAttenzione sono infelice!";
 
 	private String nome;
@@ -61,8 +61,8 @@ public class Tamagotchi {
 		return sazieta;
 	}
 
-	public void setSazieta(int sazieta) {
-		this.sazieta = sazieta;
+	public void setSazieta(double d) {
+		this.sazieta = d;
 	}
 
 	public boolean isInfelice() {

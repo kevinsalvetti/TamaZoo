@@ -7,18 +7,18 @@ public class TamaTriste extends Tamagotchi {
 		super.nomeTipo = "triste";
 	}
 
-	public void riceviCarezze(int, numCarezze) {
-		sazieta (Math.max(0, (sazieta() - numCarezze) / FATTORE_CAREZZE));
+	public void riceviCarezze(int numCarezze) {
+		setSazieta(Math.max(0, (getSazieta() - numCarezze) / FATTORE_CAREZZE));
 	}
 
-	public void riceviBiscotti(int, numBiscotti) {
+	public void riceviBiscotti(int numBiscotti) {
 		for (int i = 1; i <= numBiscotti; i++) {
-		sazieta (Math.min(sazieta() * INCREMENTA_BISCOTTI , MAX_SAZIETA));
+		setSazieta(Math.min(getSazieta() * INCREMENTA_BISCOTTI , MAX_SAZIETA));
 		}
 	}
 
 	public boolean isDie() {
-		return getGradoSazieta() == 0 || getGradoSazieta() == MAX_SAZIETA;
+		return getSazieta() == 0 || getSazieta() == MAX_SAZIETA;
 	}
 
 	public boolean isInfelice() {
